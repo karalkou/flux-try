@@ -11,7 +11,10 @@ export default class Article extends Component {
         console.log('---', 123);
         return (
             <div>
-                <h3 onClick={this.handleClick}>{article.title}</h3>
+                <div>
+                    <h3 onClick={this.handleClick}>{article.title}</h3>
+                    <a href="#" onClick={this.handleDelete}>Delete article</a>
+                </div>
                 {this.getBody()}
             </div>
         )
@@ -34,5 +37,10 @@ export default class Article extends Component {
         this.setState({
             isOpen: !this.state.isOpen
         })
+    };
+
+    handleDelete = ev => {
+        ev.preventDefault();
+        console.log('Delete article: ', this.props.article.id);
     }
 }

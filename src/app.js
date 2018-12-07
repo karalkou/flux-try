@@ -1,6 +1,5 @@
 import React from 'react'
-import {render} from 'react-dom'
-import ArticleList from './ArticleList'
-import {articles} from './fixtures'
+import { render } from 'react-dom'
+import FluxContainer from "./components/FluxContainer";
 
-render(<ArticleList articles={articles} />, document.getElementById('container'))
+render(<FluxContainer />, document.getElementById('container'))
