@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import CommentsBlock from './CommentsBlock'
+import React, {Component} from 'react';
+import CommentsBlock from './CommentsBlock';
+import { deleteArticleId } from '../AC/articles';
 
 export default class Article extends Component {
     state = {
@@ -41,6 +42,10 @@ export default class Article extends Component {
 
     handleDelete = ev => {
         ev.preventDefault();
-        console.log('Delete article: ', this.props.article.id);
+
+        const { article } = this.props;
+        console.log('Delete article: ', article.id);
+
+        deleteArticleId(article.id)
     }
 }
